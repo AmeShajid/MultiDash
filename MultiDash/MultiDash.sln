@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiDash", "MultiDash.csproj", "{E37F1680-1BBA-7D64-076D-1066C4501313}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockData", "MockData\MockData.csproj", "{BD248CB6-AE09-05F8-F25D-52686DC7818E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E37F1680-1BBA-7D64-076D-1066C4501313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E37F1680-1BBA-7D64-076D-1066C4501313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E37F1680-1BBA-7D64-076D-1066C4501313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E37F1680-1BBA-7D64-076D-1066C4501313}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD248CB6-AE09-05F8-F25D-52686DC7818E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD248CB6-AE09-05F8-F25D-52686DC7818E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD248CB6-AE09-05F8-F25D-52686DC7818E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD248CB6-AE09-05F8-F25D-52686DC7818E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4C2AC97-DA81-4104-940F-24CE4BA3F8E1}
+	EndGlobalSection
+EndGlobal
