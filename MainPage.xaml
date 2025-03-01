@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp1"
+             x:Class="MauiApp1.MainPage"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="*, Auto">
+        <!-- Main Content -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="20" Spacing="15">
+                <!-- Profile Icon and Menu -->
+                <Grid ColumnDefinitions="Auto,*,Auto,Auto" Margin="0,10">
+                    <Button Grid.Column="0"
+                            Text="👤"
+                            FontSize="24"
+                            BackgroundColor="Transparent"
+                            TextColor="Gray"/>
+                    <Button Grid.Column="2"
+                            Text="🔄"
+                            FontSize="24"
+                            BackgroundColor="Transparent"
+                            TextColor="Gray"
+                            Clicked="OnAddTestOrderClicked"/>
+                    <Button Grid.Column="3"
+                            Text="☰"
+                            FontSize="24"
+                            BackgroundColor="Transparent"
+                            TextColor="Gray"/>
+                </Grid>
+
+                <!-- DoorDash Card -->
+                <Frame BorderColor="#FF4500" 
+                       CornerRadius="15" 
+                       Padding="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="10">
+                        <Grid ColumnDefinitions="*, Auto, Auto">
+                            <Label x:Name="DoorDashHeader"
+                                   Text="Doordash" 
+                                   FontSize="24" 
+                                   TextColor="#FF4500"
+                                   FontAttributes="Bold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnDoorDashHeaderTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Button Grid.Column="1"
+                                    Text="🗑"
+                                    FontSize="20"
+                                    TextColor="#FF4500"
+                                    BackgroundColor="Transparent"
+                                    Clicked="OnClearDoorDashClicked"/>
+                            <Label Grid.Column="2" 
+                                   x:Name="DoorDashExpandIcon"
+                                   Text="▼" 
+                                   TextColor="#FF4500"
+                                   FontSize="20"
+                                   VerticalOptions="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnDoorDashHeaderTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                        <VerticalStackLayout x:Name="DoorDashDetails" 
+                                           Spacing="5" 
+                                           IsVisible="false">
+                            <CollectionView ItemsSource="{Binding DoorDashOrders}"
+                                          Margin="0,5">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame Margin="0,3" 
+                                               Padding="10,8"
+                                               BorderColor="#E0E0E0"
+                                               BackgroundColor="#F8F8F8"
+                                               CornerRadius="8"
+                                               HasShadow="False">
+                                            <Grid RowDefinitions="Auto,Auto,Auto"
+                                                  ColumnDefinitions="*, Auto">
+                                                <VerticalStackLayout Grid.RowSpan="3"
+                                                                   Grid.Column="0"
+                                                                   Spacing="2">
+                                                    <Label Text="{Binding Restaurant.Name}" 
+                                                           TextColor="#333333"
+                                                           FontSize="16"
+                                                           FontAttributes="Bold"/>
+                                                    <Grid ColumnDefinitions="Auto,Auto,Auto" 
+                                                          ColumnSpacing="15">
+                                                        <Label Grid.Column="0" 
+                                                               Text="{Binding TotalPay, StringFormat='${0:F2}'}"
+                                                               TextColor="#22AA22"
+                                                               FontAttributes="Bold"/>
+                                                        <Label Grid.Column="1" 
+                                                               Text="{Binding Distance, StringFormat='{0:F1} mi'}"
+                                                               TextColor="#666666"/>
+                                                        <Label Grid.Column="2" 
+                                                               Text="{Binding EstimatedTime, StringFormat='{0:mm} mins'}"
+                                                               TextColor="#666666"/>
+                                                    </Grid>
+                                                    <Label Text="{Binding PickupLocation.Address}"
+                                                           TextColor="#666666"
+                                                           FontSize="14">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="📍 "/>
+                                                                <Span Text="{Binding PickupLocation.Address}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </VerticalStackLayout>
+                                                <Button Grid.Column="1"
+                                                        Grid.RowSpan="3"
+                                                        Text="❌"
+                                                        FontSize="16"
+                                                        TextColor="Red"
+                                                        BackgroundColor="Transparent"
+                                                        VerticalOptions="Center"
+                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainPage}}, Path=DeleteOrderCommand}"
+                                                        CommandParameter="{Binding .}"/>
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Grubhub Card -->
+                <Frame BorderColor="#FFA500" 
+                       CornerRadius="15" 
+                       Padding="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="10">
+                        <Grid ColumnDefinitions="*, Auto, Auto">
+                            <Label x:Name="GrubhubHeader"
+                                   Text="Grubhub" 
+                                   FontSize="24" 
+                                   TextColor="#FFA500"
+                                   FontAttributes="Bold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnGrubhubHeaderTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Button Grid.Column="1"
+                                    Text="🗑"
+                                    FontSize="20"
+                                    TextColor="#FFA500"
+                                    BackgroundColor="Transparent"
+                                    Clicked="OnClearGrubhubClicked"/>
+                            <Label Grid.Column="2" 
+                                   x:Name="GrubhubExpandIcon"
+                                   Text="▼" 
+                                   TextColor="#FFA500"
+                                   FontSize="20"
+                                   VerticalOptions="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnGrubhubHeaderTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                        <VerticalStackLayout x:Name="GrubhubDetails" 
+                                           Spacing="5" 
+                                           IsVisible="false">
+                            <CollectionView ItemsSource="{Binding GrubhubOrders}"
+                                          Margin="0,5">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame Margin="0,3" 
+                                               Padding="10,8"
+                                               BorderColor="#E0E0E0"
+                                               BackgroundColor="#F8F8F8"
+                                               CornerRadius="8"
+                                               HasShadow="False">
+                                            <Grid RowDefinitions="Auto,Auto,Auto"
+                                                  ColumnDefinitions="*, Auto">
+                                                <VerticalStackLayout Grid.RowSpan="3"
+                                                                   Grid.Column="0"
+                                                                   Spacing="2">
+                                                    <Label Text="{Binding Restaurant.Name}" 
+                                                           TextColor="#333333"
+                                                           FontSize="16"
+                                                           FontAttributes="Bold"/>
+                                                    <Grid ColumnDefinitions="Auto,Auto,Auto" 
+                                                          ColumnSpacing="15">
+                                                        <Label Grid.Column="0" 
+                                                               Text="{Binding TotalPay, StringFormat='${0:F2}'}"
+                                                               TextColor="#22AA22"
+                                                               FontAttributes="Bold"/>
+                                                        <Label Grid.Column="1" 
+                                                               Text="{Binding Distance, StringFormat='{0:F1} mi'}"
+                                                               TextColor="#666666"/>
+                                                        <Label Grid.Column="2" 
+                                                               Text="{Binding EstimatedTime, StringFormat='{0:mm} mins'}"
+                                                               TextColor="#666666"/>
+                                                    </Grid>
+                                                    <Label Text="{Binding PickupLocation.Address}"
+                                                           TextColor="#666666"
+                                                           FontSize="14">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="📍 "/>
+                                                                <Span Text="{Binding PickupLocation.Address}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </VerticalStackLayout>
+                                                <Button Grid.Column="1"
+                                                        Grid.RowSpan="3"
+                                                        Text="❌"
+                                                        FontSize="16"
+                                                        TextColor="Red"
+                                                        BackgroundColor="Transparent"
+                                                        VerticalOptions="Center"
+                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainPage}}, Path=DeleteOrderCommand}"
+                                                        CommandParameter="{Binding .}"/>
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- UberEats Card -->
+                <Frame BorderColor="#90EE90" 
+                       CornerRadius="15" 
+                       Padding="15"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="10">
+                        <Grid ColumnDefinitions="*, Auto, Auto">
+                            <Label x:Name="UberEatsHeader"
+                                   Text="Uber Eats" 
+                                   FontSize="24" 
+                                   TextColor="#90EE90"
+                                   FontAttributes="Bold">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnUberEatsHeaderTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Button Grid.Column="1"
+                                    Text="🗑"
+                                    FontSize="20"
+                                    TextColor="#90EE90"
+                                    BackgroundColor="Transparent"
+                                    Clicked="OnClearUberEatsClicked"/>
+                            <Label Grid.Column="2" 
+                                   x:Name="UberEatsExpandIcon"
+                                   Text="▼" 
+                                   TextColor="#90EE90"
+                                   FontSize="20"
+                                   VerticalOptions="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnUberEatsHeaderTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                        <VerticalStackLayout x:Name="UberEatsDetails" 
+                                           Spacing="5" 
+                                           IsVisible="false">
+                            <CollectionView ItemsSource="{Binding UberEatsOrders}"
+                                          Margin="0,5">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame Margin="0,3" 
+                                               Padding="10,8"
+                                               BorderColor="#E0E0E0"
+                                               BackgroundColor="#F8F8F8"
+                                               CornerRadius="8"
+                                               HasShadow="False">
+                                            <Grid RowDefinitions="Auto,Auto,Auto"
+                                                  ColumnDefinitions="*, Auto">
+                                                <VerticalStackLayout Grid.RowSpan="3"
+                                                                   Grid.Column="0"
+                                                                   Spacing="2">
+                                                    <Label Text="{Binding Restaurant.Name}" 
+                                                           TextColor="#333333"
+                                                           FontSize="16"
+                                                           FontAttributes="Bold"/>
+                                                    <Grid ColumnDefinitions="Auto,Auto,Auto" 
+                                                          ColumnSpacing="15">
+                                                        <Label Grid.Column="0" 
+                                                               Text="{Binding TotalPay, StringFormat='${0:F2}'}"
+                                                               TextColor="#22AA22"
+                                                               FontAttributes="Bold"/>
+                                                        <Label Grid.Column="1" 
+                                                               Text="{Binding Distance, StringFormat='{0:F1} mi'}"
+                                                               TextColor="#666666"/>
+                                                        <Label Grid.Column="2" 
+                                                               Text="{Binding EstimatedTime, StringFormat='{0:mm} mins'}"
+                                                               TextColor="#666666"/>
+                                                    </Grid>
+                                                    <Label Text="{Binding PickupLocation.Address}"
+                                                           TextColor="#666666"
+                                                           FontSize="14">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="📍 "/>
+                                                                <Span Text="{Binding PickupLocation.Address}"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </VerticalStackLayout>
+                                                <Button Grid.Column="1"
+                                                        Grid.RowSpan="3"
+                                                        Text="❌"
+                                                        FontSize="16"
+                                                        TextColor="Red"
+                                                        BackgroundColor="Transparent"
+                                                        VerticalOptions="Center"
+                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainPage}}, Path=DeleteOrderCommand}"
+                                                        CommandParameter="{Binding .}"/>
+                                            </Grid>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bottom Navigation Bar -->
+        <Grid Grid.Row="1" 
+              ColumnDefinitions="*,*,*,*,*"
+              BackgroundColor="#f8f8f8"
+              Padding="0,10">
+            <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center">
+                <Image Source="map.png" HeightRequest="24"/>
+                <Label Text="Map" FontSize="15" TextColor="Gray"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                <Image Source="schedule.png" HeightRequest="24"/>
+                <Label Text="Schedule" FontSize="15" TextColor="Gray"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                <Image Source="account.png" HeightRequest="24"/>
+                <Label Text="Account" FontSize="15" TextColor="Gray"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="3" HorizontalOptions="Center">
+                <Image Source="rating.png" HeightRequest="24"/>
+                <Label Text="Rating" FontSize="15" TextColor="Gray"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="4" HorizontalOptions="Center">
+                <Image Source="earnings.png" HeightRequest="24"/>
+                <Label Text="Earnings" FontSize="15" TextColor="Gray"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+
+</ContentPage>
