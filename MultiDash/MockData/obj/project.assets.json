@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ameshajid/Downloads/MultiDash/MultiDash/MockData/MockData.csproj",
+      "projectUniqueName": "/Users/ameshajid/Downloads/MultiDash/MultiDash/MultiDash/MockData/MockData.csproj",
       "projectName": "MockData",
-      "projectPath": "/Users/ameshajid/Downloads/MultiDash/MultiDash/MockData/MockData.csproj",
+      "projectPath": "/Users/ameshajid/Downloads/MultiDash/MultiDash/MultiDash/MockData/MockData.csproj",
       "packagesPath": "/Users/ameshajid/.nuget/packages/",
-      "outputPath": "/Users/ameshajid/Downloads/MultiDash/MultiDash/MockData/obj/",
+      "outputPath": "/Users/ameshajid/Downloads/MultiDash/MultiDash/MultiDash/MockData/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ameshajid/.nuget/NuGet/NuGet.Config"
