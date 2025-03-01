@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MultiDash.App.ViewModels"
+             x:Class="MultiDash.App.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="*, Auto">
+        <!-- Main Content -->
+        <ScrollView Grid.Row="0">
+            <StackLayout Padding="20">
+                <CollectionView ItemsSource="{Binding Platforms}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Margin="0,5" Padding="10" BorderColor="{Binding AccentColor}">
+                                <StackLayout Spacing="10">
+                                    <!-- Platform Header -->
+                                    <Grid>
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding ToggleExpansionCommand}"/>
+                                        </Grid.GestureRecognizers>
+                                        <Label Text="{Binding Name}" 
+                                               FontSize="20" 
+                                               TextColor="{Binding AccentColor}"/>
+                                    </Grid>
+
+                                    <!-- Orders List (Visible when expanded) -->
+                                    <StackLayout IsVisible="{Binding IsExpanded}">
+                                        <CollectionView ItemsSource="{Binding Orders}">
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Frame Margin="10,5" Padding="10" BorderColor="LightGray">
+                                                        <Label Text="{Binding Description}" />
+                                                    </Frame>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Bottom Navigation Bar -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,*,*,*,*" BackgroundColor="White" Padding="10">
+            <Button Grid.Column="0" Text="Map" />
+            <Button Grid.Column="1" Text="Schedule" />
+            <Button Grid.Column="2" Text="Account" />
+            <Button Grid.Column="3" Text="Rating" />
+            <Button Grid.Column="4" Text="Earnings" />
+        </Grid>
+    </Grid>
+
+</ContentPage> 

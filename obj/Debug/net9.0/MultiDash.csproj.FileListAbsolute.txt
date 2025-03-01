@@ -1,0 +1,15 @@
+C:\IA Code Stuff\MultiDash\MultiDash\bin\Debug\net9.0\MultiDash.exe
+C:\IA Code Stuff\MultiDash\MultiDash\bin\Debug\net9.0\MultiDash.deps.json
+C:\IA Code Stuff\MultiDash\MultiDash\bin\Debug\net9.0\MultiDash.runtimeconfig.json
+C:\IA Code Stuff\MultiDash\MultiDash\bin\Debug\net9.0\MultiDash.dll
+C:\IA Code Stuff\MultiDash\MultiDash\bin\Debug\net9.0\MultiDash.pdb
+C:\IA Code Stuff\MultiDash\MultiDash\obj\Debug\net9.0\MultiDash.GeneratedMSBuildEditorConfig.editorconfig
+C:\IA Code Stuff\MultiDash\MultiDash\obj\Debug\net9.0\MultiDash.AssemblyInfoInputs.cache
+C:\IA Code Stuff\MultiDash\MultiDash\obj\Debug\net9.0\MultiDash.AssemblyInfo.cs
+C:\IA Code Stuff\MultiDash\MultiDash\obj\Debug\net9.0\MultiDash.csproj.CoreCompileInputs.cache
+C:\IA Code Stuff\MultiDash\MultiDash\obj\Debug\net9.0\MultiDash.sourcelink.json
+C:\IA Code Stuff\MultiDash\MultiDash\obj\Debug\net9.0\MultiDash.dll
+C:\IA Code Stuff\MultiDash\MultiDash\obj\Debug\net9.0\refint\MultiDash.dll
+C:\IA Code Stuff\MultiDash\MultiDash\obj\Debug\net9.0\MultiDash.pdb
+C:\IA Code Stuff\MultiDash\MultiDash\obj\Debug\net9.0\MultiDash.genruntimeconfig.cache
+C:\IA Code Stuff\MultiDash\MultiDash\obj\Debug\net9.0\ref\MultiDash.dll
