@@ -1,0 +1,192 @@
+[
+  {
+    "Id": "a8ce2eee-48bc-47e8-81bb-f017038661c1",
+    "Platform": 1,
+    "Restaurant": {
+      "Name": "Han Dynasty",
+      "Cuisine": "Chinese",
+      "PhoneNumber": "(215) 222-3711",
+      "IsPopular": true
+    },
+    "PickupLocation": {
+      "Address": "3401 Walnut St",
+      "City": "Philadelphia",
+      "State": "PA",
+      "ZipCode": "19104",
+      "Latitude": 39.953,
+      "Longitude": -75.1925
+    },
+    "DropoffLocation": {
+      "Address": "4800 Baltimore Ave",
+      "City": "Philadelphia",
+      "State": "PA",
+      "ZipCode": "19143",
+      "Latitude": 39.9486,
+      "Longitude": -75.2179
+    },
+    "BasePay": 12.50,
+    "EstimatedTip": 5.42,
+    "TotalPay": 17.92,
+    "PayPerMile": 12.985507246376811594202898551,
+    "Distance": 1.38,
+    "EstimatedTime": "00:29:00",
+    "TimeEfficiency": 2.8551724137931034,
+    "PickupInstructions": "Wait in delivery driver line",
+    "DropoffInstructions": "Call for apartment access",
+    "CreatedAt": "2025-03-01T20:01:00.226487Z",
+    "PickupBy": "2025-03-01T20:16:00.226503Z",
+    "DeliverBy": "2025-03-01T20:46:00.226521Z"
+  },
+  {
+    "Id": "24f2e834-a78c-4da4-88c3-053cddf9a295",
+    "Platform": 0,
+    "Restaurant": {
+      "Name": "Halal Guys",
+      "Cuisine": "Middle Eastern",
+      "PhoneNumber": "(215) 977-7955",
+      "IsPopular": true
+    },
+    "PickupLocation": {
+      "Address": "3141 Chestnut St",
+      "City": "Philadelphia",
+      "State": "PA",
+      "ZipCode": "19104",
+      "Latitude": 39.9566,
+      "Longitude": -75.1899
+    },
+    "DropoffLocation": {
+      "Address": "3401 Walnut St",
+      "City": "Philadelphia",
+      "State": "PA",
+      "ZipCode": "19104",
+      "Latitude": 39.953,
+      "Longitude": -75.1925
+    },
+    "BasePay": 3.28,
+    "EstimatedTip": 17.00,
+    "TotalPay": 20.28,
+    "PayPerMile": 72.428571428571428571428571429,
+    "Distance": 0.28,
+    "EstimatedTime": "00:43:00",
+    "TimeEfficiency": 0.3906976744186047,
+    "PickupInstructions": "Call restaurant upon arrival",
+    "DropoffInstructions": "Ring doorbell",
+    "CreatedAt": "2025-03-01T20:01:00.226553Z",
+    "PickupBy": "2025-03-01T20:16:00.226553Z",
+    "DeliverBy": "2025-03-01T20:46:00.226553Z"
+  },
+  {
+    "Id": "810802ca-febe-47ab-b897-c0c3326a5ba1",
+    "Platform": 2,
+    "Restaurant": {
+      "Name": "Han Dynasty",
+      "Cuisine": "Chinese",
+      "PhoneNumber": "(215) 222-3711",
+      "IsPopular": true
+    },
+    "PickupLocation": {
+      "Address": "3401 Walnut St",
+      "City": "Philadelphia",
+      "State": "PA",
+      "ZipCode": "19104",
+      "Latitude": 39.953,
+      "Longitude": -75.1925
+    },
+    "DropoffLocation": {
+      "Address": "1100 S Broad St",
+      "City": "Philadelphia",
+      "State": "PA",
+      "ZipCode": "19146",
+      "Latitude": 39.9338,
+      "Longitude": -75.1668
+    },
+    "BasePay": 10.91,
+    "EstimatedTip": 3.43,
+    "TotalPay": 14.34,
+    "PayPerMile": 7.5473684210526315789473684211,
+    "Distance": 1.9,
+    "EstimatedTime": "00:40:00",
+    "TimeEfficiency": 2.85,
+    "PickupInstructions": "Look for pickup shelf inside",
+    "DropoffInstructions": "Meet in lobby",
+    "CreatedAt": "2025-03-01T20:01:00.226555Z",
+    "PickupBy": "2025-03-01T20:16:00.226555Z",
+    "DeliverBy": "2025-03-01T20:46:00.226555Z"
+  },
+  {
+    "Id": "47fbdd83-caa6-4f7e-be65-cca9ac4d90d0",
+    "Platform": 2,
+    "Restaurant": {
+      "Name": "Shake Shack",
+      "Cuisine": "Burgers",
+      "PhoneNumber": "(215) 921-9940",
+      "IsPopular": true
+    },
+    "PickupLocation": {
+      "Address": "1500 Market St",
+      "City": "Philadelphia",
+      "State": "PA",
+      "ZipCode": "19102",
+      "Latitude": 39.9526,
+      "Longitude": -75.1652
+    },
+    "DropoffLocation": {
+      "Address": "1100 S Broad St",
+      "City": "Philadelphia",
+      "State": "PA",
+      "ZipCode": "19146",
+      "Latitude": 39.9338,
+      "Longitude": -75.1668
+    },
+    "BasePay": 6.69,
+    "EstimatedTip": 19.02,
+    "TotalPay": 25.71,
+    "PayPerMile": 19.776923076923076923076923077,
+    "Distance": 1.3,
+    "EstimatedTime": "00:34:00",
+    "TimeEfficiency": 2.294117647058824,
+    "PickupInstructions": "Use side entrance for pickup",
+    "DropoffInstructions": "Text when arriving",
+    "CreatedAt": "2025-03-01T20:01:00.226556Z",
+    "PickupBy": "2025-03-01T20:16:00.226556Z",
+    "DeliverBy": "2025-03-01T20:46:00.226556Z"
+  },
+  {
+    "Id": "65379501-a71c-4626-b717-bbe8b6700dd3",
+    "Platform": 2,
+    "Restaurant": {
+      "Name": "Shake Shack",
+      "Cuisine": "Burgers",
+      "PhoneNumber": "(215) 921-9940",
+      "IsPopular": true
+    },
+    "PickupLocation": {
+      "Address": "3141 Chestnut St",
+      "City": "Philadelphia",
+      "State": "PA",
+      "ZipCode": "19104",
+      "Latitude": 39.9566,
+      "Longitude": -75.1899
+    },
+    "DropoffLocation": {
+      "Address": "3401 Walnut St",
+      "City": "Philadelphia",
+      "State": "PA",
+      "ZipCode": "19104",
+      "Latitude": 39.953,
+      "Longitude": -75.1925
+    },
+    "BasePay": 5.94,
+    "EstimatedTip": 5.70,
+    "TotalPay": 11.64,
+    "PayPerMile": 41.571428571428571428571428571,
+    "Distance": 0.28,
+    "EstimatedTime": "00:35:00",
+    "TimeEfficiency": 0.48000000000000004,
+    "PickupInstructions": "Wait in delivery driver line",
+    "DropoffInstructions": "Gate code: #1234",
+    "CreatedAt": "2025-03-01T20:01:00.226557Z",
+    "PickupBy": "2025-03-01T20:16:00.226558Z",
+    "DeliverBy": "2025-03-01T20:46:00.226558Z"
+  }
+]
